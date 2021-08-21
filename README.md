@@ -1,6 +1,7 @@
 # NFT Art Generator
 
 Script that generates unique images from a collection of component attribute based on weight.
+![](example/output.jpg) 
 
 ### Dependencies
 
@@ -51,6 +52,4 @@ generate_att()
 # generate image based on the  attribute_map.json
 generate_art()
 ```
-![](example/output.jpg) 
-
 
