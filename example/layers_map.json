@@ -1,0 +1,474 @@
+{
+    "01_background": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "background": {
+                "att_chance": 100.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    },
+    "02_shadow": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "shadow": {
+                "att_chance": 100.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    },
+    "03_feet": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "feet": {
+                "att_chance": 100.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    },
+    "04_body": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "body": {
+                "att_chance": 100.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    },
+    "05_cloth": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 20.0,
+                "black_list_att": []
+            },
+            "black_t": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "blue_pant": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "clipart": {
+                "att_chance": 2.0,
+                "black_list_att": []
+            },
+            "dress": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "girl": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "green_pant": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "grey_pant": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "overalls": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "panty": {
+                "att_chance": 1.0,
+                "black_list_att": []
+            },
+            "patrick": {
+                "att_chance": 0.5,
+                "black_list_att": []
+            },
+            "pink_pant": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "rainbow_t": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "red_pant": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "sandy": {
+                "att_chance": 0.2,
+                "black_list_att": []
+            },
+            "spongebob": {
+                "att_chance": 1.0,
+                "black_list_att": []
+            },
+            "squidward": {
+                "att_chance": 0.5,
+                "black_list_att": []
+            },
+            "stripe_t": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "suit": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "under": {
+                "att_chance": 1.0,
+                "black_list_att": []
+            },
+            "victory": {
+                "att_chance": 0.5,
+                "black_list_att": []
+            },
+            "white_t": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    },
+    "06_shoe": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "dress": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "sandy": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "spongebob": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "victory": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": "05_cloth"
+    },
+    "07_item": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 10.0,
+                "black_list_att": []
+            },
+            "beer": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "buger": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "cake": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "choco": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "coffee": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "dougnut": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "fires": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "hot_dog": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "ice_cream": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "pineapple": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "pizza": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "pop": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    },
+    "08_hand": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "hand": {
+                "att_chance": 100.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    },
+    "09_sleeve": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "dress": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "sandy": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "spongebob": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "squidward": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "suit": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "victory": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": "05_cloth"
+    },
+    "10_face": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 0.0,
+                "black_list_att": []
+            },
+            "buu": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "gya": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "ha": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "hee": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "heh": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "hmm": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "lol": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "nah": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "ok": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "uu": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "wala": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "what": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    },
+    "11_head": {
+        "attributes": {
+            "under": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "0_no_attributes": {
+                "att_chance": 10.0,
+                "black_list_att": []
+            },
+            "Drifter_hair": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "afro": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "antenna": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "astronaut_in_ocean": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "brain": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "bunny": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "cook_hat": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "gloves_hat": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "hair": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "jellyfish": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "kk": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "manbob": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "momhair": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "priate_hat": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "puff": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "snail": {
+                "att_chance": 2.0,
+                "black_list_att": []
+            },
+            "soda_hat": {
+                "att_chance": 1.0,
+                "black_list_att": []
+            },
+            "stanley_hair": {
+                "att_chance": 5.0,
+                "black_list_att": []
+            },
+            "vitory_hat": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    },
+    "12_glasses": {
+        "attributes": {
+            "0_no_attributes": {
+                "att_chance": 10.0,
+                "black_list_att": []
+            },
+            "3d_glasses": {
+                "att_chance": 6.0,
+                "black_list_att": []
+            },
+            "eye_patch": {
+                "att_chance": 6.0,
+                "black_list_att": []
+            },
+            "glasses": {
+                "att_chance": 7.0,
+                "black_list_att": []
+            },
+            "goggle": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "goofy_goober_glasses": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "heart_glasses": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "patrick_glasses": {
+                "att_chance": 1.0,
+                "black_list_att": []
+            },
+            "pineapple_glasses": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "plankton_glasses": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            },
+            "sun_glasses": {
+                "att_chance": 6.0,
+                "black_list_att": []
+            },
+            "pink_glasses": {
+                "att_chance": 3.0,
+                "black_list_att": []
+            }
+        },
+        "link_att": null
+    }
+}
