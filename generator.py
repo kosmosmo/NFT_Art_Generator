@@ -56,8 +56,8 @@ def generate_att():
             visited.add(atts)
             attribute_map[i] = temp
             i += 1
-        with open(attribute_map_path + 'attributes_map.json', 'w') as f:
-            f.write(json.dumps(attribute_map, indent=4, separators=(',', ': '), sort_keys=True))
+    with open(attribute_map_path + 'attributes_map.json', 'w') as f:
+        f.write(json.dumps(attribute_map, indent=4, separators=(',', ': '), sort_keys=True))
     return attribute_map
 
 def generate_art():
