@@ -2,7 +2,6 @@
 
 Script that generates unique images from a collection of component attribute based on weight.
 
-
 ![](example/output.jpg) 
 
 ### Dependencies
@@ -42,7 +41,6 @@ image_output_path = 'example\\outputs\\'
 
 
 ```python
-
 # create a layers map in layers_map_path.
 create_json()
 
@@ -53,4 +51,6 @@ generate_att()
 # generate image based on the  attribute_map.json
 generate_art()
 ```
+
+
 
