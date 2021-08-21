@@ -42,7 +42,6 @@ image_output_path = 'example\\outputs\\'
 
 
 ```python
-import NFT Art Generator
 
 # create a layers map in layers_map_path.
 create_json()
