@@ -1,8 +1,5 @@
-layers_folder = 'example2\layers'
-layers_map_path = 'example2\\'
-attribute_map_path = 'example2\\'
+project_folder = 'example\\'
 total_art = 1000
-image_output_path = 'example2\\outputs\\'
 
 from collections import OrderedDict
 import os, json, random,cv2
@@ -10,16 +7,16 @@ import numpy as np
 
 def create_json():
     layers_map = OrderedDict()
-    my_layers = os.listdir(layers_folder)
+    my_layers = os.listdir(project_folder+'layers')
     for layer in my_layers:
         layers_map[layer] = {}
-        pics = os.listdir(layers_folder+ '\\' + layer)
+        pics = os.listdir(project_folder+'layers'+ '\\' + layer)
         temp = {'0_no_attributes':{'att_chance':1.0,'black_list_att':[]}}
         for p in pics:
             temp[p.split('.')[0]] = {'att_chance':1.0,'black_list_att':[]}
         layers_map[layer]['link_att'] = None
         layers_map[layer]['attributes'] = temp
-        with open(layers_map_path + 'layers_map.json', 'w') as f:
+        with open(project_folder + 'layers_map.json', 'w') as f:
             f.write(json.dumps(layers_map, indent=4, separators=(',', ': '), sort_keys=True))
     return layers_map
 
@@ -32,7 +29,7 @@ def get_weight(attributes):
     return [population,weight]
 
 def generate_att():
-    with open(layers_map_path + 'layers_map.json', 'r') as f:
+    with open(project_folder + 'layers_map.json', 'r') as f:
         layers_map = json.load(f, object_pairs_hook=OrderedDict)
     attribute_map = OrderedDict()
     visited = set()
@@ -56,13 +53,11 @@ def generate_att():
             visited.add(atts)
             attribute_map[i] = temp
             i += 1
-    with open(attribute_map_path + 'attributes_map.json', 'w') as f:
+    with open(project_folder + 'attributes_map.json', 'w') as f:
         f.write(json.dumps(attribute_map, indent=4, separators=(',', ': '), sort_keys=True))
     return attribute_map
 
-def generate_art():
-    with open(attribute_map_path + 'attributes_map.json', 'r') as f:
-        attribute_map = json.load(f, object_pairs_hook=OrderedDict)
+def generate_art(attribute_map):
     for key,val in attribute_map.items():
         print('generating img ' + key)
         img1 =  np.zeros((1, 1,3), dtype=np.uint8)
@@ -82,8 +77,24 @@ def generate_art():
             imgNew = (img * (1 / 255.0)) * (imgMask * (1 / 255.0))
             result = np.uint8(cv2.addWeighted(bgNew, 255.0, imgNew, 255.0, 0.0))
             img1 = result
-        cv2.imwrite(image_output_path+ key +'.png', img1)
+        cv2.imwrite(project_folder + 'outputs\\'+ key +'.png', img1)
+
+
+"""
+from itertools import islice
+from multiprocessing import Process
+if __name__ == '__main__':
+    with open(project_folder + 'attributes_map.json', 'r') as f:
+        attribute_map = json.load(f, object_pairs_hook=OrderedDict)
+    def chunks(data, SIZE=100):
+       it = iter(data)
+       for i in range(0, len(data), SIZE):
+          yield {k:data[k] for k in islice(it, SIZE)}
+    for item in chunks(attribute_map):
+        proc = Process(target=generate_art, args=(item,))
+        proc.start()
+"""
+
 #create_json()
 #generate_att()
 #generate_art()
-
