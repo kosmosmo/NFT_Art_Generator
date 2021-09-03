@@ -57,7 +57,10 @@ def generate_att():
         f.write(json.dumps(attribute_map, indent=4, separators=(',', ': '), sort_keys=True))
     return attribute_map
 
-def generate_art(attribute_map):
+def generate_art(attribute_map=None):
+    if not attribute_map:
+        with open(project_folder + 'attributes_map.json', 'r') as f:
+            attribute_map = json.load(f, object_pairs_hook=OrderedDict)
     for key,val in attribute_map.items():
         print('generating img ' + key)
         img1 =  np.zeros((1, 1,3), dtype=np.uint8)
