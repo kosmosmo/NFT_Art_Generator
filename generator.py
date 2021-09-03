@@ -1,8 +1,8 @@
-layers_folder = 'example\layers'
-layers_map_path = 'example\\'
-attribute_map_path = 'example\\'
-total_art = 500
-image_output_path = 'example\\outputs\\'
+layers_folder = 'example2\layers'
+layers_map_path = 'example2\\'
+attribute_map_path = 'example2\\'
+total_art = 1000
+image_output_path = 'example2\\outputs\\'
 
 from collections import OrderedDict
 import os, json, random,cv2
@@ -14,9 +14,9 @@ def create_json():
     for layer in my_layers:
         layers_map[layer] = {}
         pics = os.listdir(layers_folder+ '\\' + layer)
-        temp = {'0_no_attributes':{'att_chance':0.0,'black_list_att':[]}}
+        temp = {'0_no_attributes':{'att_chance':1.0,'black_list_att':[]}}
         for p in pics:
-            temp[p.split('.')[0]] = {'att_chance':0.0,'black_list_att':[]}
+            temp[p.split('.')[0]] = {'att_chance':1.0,'black_list_att':[]}
         layers_map[layer]['link_att'] = None
         layers_map[layer]['attributes'] = temp
         with open(layers_map_path + 'layers_map.json', 'w') as f:
@@ -65,20 +65,25 @@ def generate_art():
         attribute_map = json.load(f, object_pairs_hook=OrderedDict)
     for key,val in attribute_map.items():
         print('generating img ' + key)
-        img1 = np.zeros((1, 1, 4), dtype=np.uint8)
+        img1 =  np.zeros((1, 1,3), dtype=np.uint8)
         for key1,val1 in val.items():
             if val1 == "0_no_attributes":continue
-            img_path = 'example\layers\\' +key1 + '\\' +  val1  + ".png"
-            img2 = cv2.imread(img_path, -1)
-            h, w, c = img2.shape
-            img1 = cv2.resize(img1, (w, h), interpolation=cv2.INTER_CUBIC)
-            result = np.zeros((h, w, 3), np.uint8)
-            alpha = img2[:, :, 3] / 255.0
-            result[:, :, 0] = (1. - alpha) * img1[:, :, 0] + alpha * img2[:, :, 0]
-            result[:, :, 1] = (1. - alpha) * img1[:, :, 1] + alpha * img2[:, :, 1]
-            result[:, :, 2] = (1. - alpha) * img1[:, :, 2] + alpha * img2[:, :, 2]
+            img_path = 'example2\layers\\' +key1 + '\\' +  val1  + ".png"
+            fg = cv2.imread(
+                img_path, -1)
+            print(img_path)
+            fg = cv2.cvtColor(fg, cv2.COLOR_RGB2RGBA)
+            fgMask = fg[:, :, 3:]
+            img = fg[:, :, :-1]
+            bgMask = 255 - fgMask
+            imgMask = cv2.cvtColor(fgMask, cv2.COLOR_GRAY2BGR)
+            bgMask = cv2.cvtColor(bgMask, cv2.COLOR_GRAY2BGR)
+            bgNew = (img1 * (1 / 255.0)) * (bgMask * (1 / 255.0))
+            imgNew = (img * (1 / 255.0)) * (imgMask * (1 / 255.0))
+            result = np.uint8(cv2.addWeighted(bgNew, 255.0, imgNew, 255.0, 0.0))
             img1 = result
         cv2.imwrite(image_output_path+ key +'.png', img1)
 #create_json()
 #generate_att()
 #generate_art()
+
