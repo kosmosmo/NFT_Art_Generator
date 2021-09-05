@@ -1,5 +1,5 @@
-project_folder = 'example\\'
-total_art = 1000
+project_folder = 'example2\\'
+total_art = 10000
 
 from collections import OrderedDict
 import os, json, random,cv2
@@ -66,10 +66,8 @@ def generate_art(attribute_map=None):
         img1 =  np.zeros((1, 1,3), dtype=np.uint8)
         for key1,val1 in val.items():
             if val1 == "0_no_attributes":continue
-            img_path = 'example2\layers\\' +key1 + '\\' +  val1  + ".png"
-            fg = cv2.imread(
-                img_path, -1)
-            print(img_path)
+            img_path = project_folder + 'layers\\' +key1 + '\\' +  val1  + ".png"
+            fg = cv2.imread(img_path, -1)
             fg = cv2.cvtColor(fg, cv2.COLOR_RGB2RGBA)
             fgMask = fg[:, :, 3:]
             img = fg[:, :, :-1]
@@ -80,8 +78,35 @@ def generate_art(attribute_map=None):
             imgNew = (img * (1 / 255.0)) * (imgMask * (1 / 255.0))
             result = np.uint8(cv2.addWeighted(bgNew, 255.0, imgNew, 255.0, 0.0))
             img1 = result
+        """
+        # no compression        
         cv2.imwrite(project_folder + 'outputs\\'+ key +'.png', img1)
+        """
+        cv2.imwrite(project_folder + 'outputs\\'+ key + '.jpg', img1, [int(cv2.IMWRITE_JPEG_QUALITY), 90])
 
+
+def generate_trait_data():
+    with open(project_folder + 'attributes_map.json', 'r') as f:
+        attribute_map = json.load(f, object_pairs_hook=OrderedDict)
+    trait_data_path = project_folder + 'outputs_data\\'
+    for key,val in attribute_map.items():
+        res = []
+        for k,v in val.items():
+            if v == "0_no_attributes":continue
+            att = {}
+            k = '_'.join(k.split('_')[1:])
+            att['trait_type'] = k
+            att['value'] = v.replace('_', ' ')
+            res.append(att)
+        with open(trait_data_path + str(key) +'.json', 'w') as f:
+            f.write(json.dumps(res, indent=4, separators=(',', ': '), sort_keys=True))
+
+
+def slicing_dic(order_dic,start,end):
+    list_dict = list(order_dic.items())
+    slice_dic = list_dict[start:end]
+    res = OrderedDict(slice_dic)
+    return (res)
 
 """
 from itertools import islice
@@ -89,6 +114,7 @@ from multiprocessing import Process
 if __name__ == '__main__':
     with open(project_folder + 'attributes_map.json', 'r') as f:
         attribute_map = json.load(f, object_pairs_hook=OrderedDict)
+    #attribute_map = slicing_dic(attribute_map,0,2000)  # breaking the map into smaller chunks for render.
     def chunks(data, SIZE=100):
        it = iter(data)
        for i in range(0, len(data), SIZE):
@@ -97,7 +123,8 @@ if __name__ == '__main__':
         proc = Process(target=generate_art, args=(item,))
         proc.start()
 """
-
 #create_json()
 #generate_att()
+
 #generate_art()
+#generate_trait_data()
