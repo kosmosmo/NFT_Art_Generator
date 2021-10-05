@@ -32,7 +32,7 @@ layers/
 
 Specify arguments at generator.py top
 ```python
-project_folder = 'example\layers'
+project_folder = 'example\\
 total_art = 500
 ```
 
