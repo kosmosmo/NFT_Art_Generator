@@ -32,11 +32,8 @@ layers/
 
 Specify arguments at generator.py top
 ```python
-layers_folder = 'example\layers'
-layers_map_path = 'example\\'
-attribute_map_path = 'example\\'
+project_folder = 'example\layers'
 total_art = 500
-image_output_path = 'example\\outputs\\'
 ```
 
 
